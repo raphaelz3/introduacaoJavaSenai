@@ -78,33 +78,40 @@ public class Main {
 //        }
 //        if (!naoAchou)
 //            System.out.println("Numero nao encontrado");
-
-        //Copiar e inverter vetor
-        int[]  inverter = new int[5];
-        int[] invertido = new int[5];
-        int contador = 0;
-
-        inverter = preencherInt(5);
-        for(int i = inverter.length - 1; i >= 0; i--){
-            invertido[contador] = inverter[i];
-            contador++;
-        }
-        printarVetor(inverter);
-        printarVetor(invertido);
 //
-//        //Avancado
-//        //Remover duplicatas
-//        int[] vetorDuplicado = new int[3];
-//        int[] vetorUnico = new int[vetorDuplicado.length];
-//        int aux = 1;
-//        vetorDuplicado = preencherInt(vetorDuplicado.length);
+//        //Copiar e inverter vetor
+//        int[]  inverter = new int[5];
+//        int[] invertido = new int[5];
+//        int contador = 0;
 //
-//        for(int i = 0; i < vetorDuplicado.length; i++){
-//
-//            while (aux != vetorDuplicado.length){
-//                aux++;//Nao finalizado
-//            }
+//        inverter = preencherInt(5);
+//        for(int i = inverter.length - 1; i >= 0; i--){
+//            invertido[contador] = inverter[i];
+//            contador++;
 //        }
+//        printarVetor(inverter);
+//        printarVetor(invertido);
+
+        //Avancado
+        //Remover duplicatas
+        int[] vetorDuplicado = new int[10];
+        int[] vetorUnico = new int[vetorDuplicado.length];
+        int aux = 0;
+        vetorDuplicado = preencherInt(vetorDuplicado.length);
+
+        for(int i = 0; i < vetorDuplicado.length; i++){
+            if(aux == i)
+                aux++;
+            while (aux < vetorDuplicado.length){
+                if(vetorDuplicado[i] == vetorDuplicado[aux])
+                    aux = vetorDuplicado.length;
+                else
+                    vetorUnico[i] = vetorDuplicado[i];
+                aux++;
+            }
+            aux = 0;
+        }
+        printarVetor(vetorUnico);
 
 
      scan.close();
